@@ -38,3 +38,26 @@ pep8, pyflakes, flake8, haking, Pylint.
 it is better to user Pycharm , Elipse , VS code, so you do no need to care about the tools.
 they should already includ these tools
 '''
+
+'''
+>>> l
+[1, 2, 2]
+>>> def ss(lll):
+...   lll=[1,4,5]
+...
+>>> ss(l)
+>>> l
+[1, 2, 2]  ## not change
+'''
+
+'''
+>>> def ss(lll):
+...   lll.append(12)
+...
+>>> l = []
+>>> ss(l)
+>>> l
+[12]  ###### changed !!!!!
+>>>
+
+'''
