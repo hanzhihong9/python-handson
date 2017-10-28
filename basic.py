@@ -39,6 +39,18 @@ it is better to user Pycharm , Elipse , VS code, so you do no need to care about
 they should already includ these tools
 '''
 
+
+'''
+>>> l=[]
+>>> jj=(l,)
+>>> jj
+([],)
+>>> ss(jj)
+>>> l
+[1] ##### changed
+>>>
+'''
+
 '''
 >>> l
 [1, 2, 2]
