@@ -23,3 +23,7 @@ The Zen of Python, by Tim Peters
 - If the implementation is easy to explain, it may be a good idea.
 - Namespaces are one honking great idea -- let's do more of those!
 
+Refer
+ - https://www.toptal.com/python/python-design-patterns
+
+
