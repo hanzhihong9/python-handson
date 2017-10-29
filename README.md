@@ -25,5 +25,6 @@ The Zen of Python, by Tim Peters
 
 Refer
  - https://www.toptal.com/python/python-design-patterns
-
+ - http://python-3-patterns-idioms-test.readthedocs.io/en/latest/PatternRefactoring.html#simulating-the-trash-recycler
+ 
 
