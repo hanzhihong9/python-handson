@@ -264,3 +264,69 @@ A Variable representing members of the input sequence.
 An Optional Predicate expression.
 An Output Expression producing elements of the output list from members of the Input Sequence that satisfy the predicate.
 '''
+
+
+'''
+class method decorator
+'''
+
+from pageutils import formatHeader
+
+myPage(object):
+   def __init__(self):
+      self.PageName = ''
+
+   def createPage(self):
+      pageHeader = self.createHeader()
+
+   @formatHeader   #<----- decorator
+   def createHeader(self):
+       return "Page Header ",self.PageName
+
+if __name__=="__main__":
+   page = myPage()
+   page.PageName = 'My Page'
+   page.createPage()
+
+#------- pageutils.py --------------------
+
+def formatHeader(fn):
+   def wrapped(self=None):
+       return '<div class="page_header">'+fn(self)+'</div>'
+   return wrapped
+  
+  
+  
+# generator version
+def fibon(n):
+    a = b = 1
+    for i in xrange(n):
+        yield a
+        a, b = b, a + b
+      
+      
+ '''
+  set behave mostly like lists with the distinction that they can not contain duplicate values.
+ '''
+ 
+ 
+ '''
+ generator .send
+ 
+ '''
+ 
+ def grep(pattern):
+    print("Searching for", pattern)
+    while True:
+        line = (yield)
+        if pattern in line:
+            print(line)
+
+search = grep('coroutine')
+next(search)
+# Output: Searching for coroutine
+search.send("I love you")
+search.send("Don't you love me?")
+search.send("I love coroutines instead!")
+# Output: I love coroutines instead!
+
