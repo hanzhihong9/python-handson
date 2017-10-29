@@ -210,3 +210,57 @@ class CustomOpen(object):
 
 with CustomOpen('file') as f:
     contents = f.read()
+  
+
+'''
+use generator and context lib
+'''
+from contextlib import contextmanager
+
+@contextmanager
+def custom_open(filename):
+    f = open(filename)
+    try:
+        yield f
+    finally:
+        f.close()
+
+with custom_open('file') as f:
+    contents = f.read()
+
+  
+'''
+Python is dynamically typed, which means that variables do not have a fixed type. 
+
+'''
+a= 1
+a = []
+
+'''
+The enumerate() function adds a counter to an iterable.
+>>> elements = ('foo', 'bar', 'baz')
+>>> for elem in elements:
+...     print elem
+... 
+foo
+bar
+baz
+>>> for count, elem in enumerate(elements):
+...     print count, elem
+... 
+0 foo
+1 bar
+2 baz
+'''
+
+'''
+Comprehensions are constructs that allow sequences to be built from other sequences. Python 2.0 introduced list comprehensions and Python 3.0 comes with dictionary and set comprehensions.
+
+List Comprehensions
+A list comprehension consists of the following parts:
+
+An Input Sequence.
+A Variable representing members of the input sequence.
+An Optional Predicate expression.
+An Output Expression producing elements of the output list from members of the Input Sequence that satisfy the predicate.
+'''
