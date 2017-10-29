@@ -311,7 +311,7 @@ def fibon(n):
  
  
  '''
- generator .send
+ generator .send  === coroutine
  
  '''
  
@@ -329,4 +329,4 @@ search.send("I love you")
 search.send("Don't you love me?")
 search.send("I love coroutines instead!")
 # Output: I love coroutines instead!
-
+search.close()
