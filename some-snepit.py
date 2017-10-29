@@ -330,3 +330,30 @@ search.send("Don't you love me?")
 search.send("I love coroutines instead!")
 # Output: I love coroutines instead!
 search.close()
+
+def coroutine(func):
+ def start(*args,**kwargs):
+ cr = func(*args,**kwargs)
+ cr.next()
+ return cr
+ return start
+@coroutine
+ def grep(pattern):
+    print("Searching for", pattern)
+    while True:
+        line = (yield)
+        if pattern in line:
+            print(line)
+         
+         
+         
+'''
+for item in container:
+    if search_something(item):
+        # Found it!
+        process(item)
+        break
+else:
+    # Didn't find anything..
+    not_found_in_container()
+'''
