@@ -1,8 +1,18 @@
 '''
+preemptive or cooperative
+     Process thread async 
+       p        p    C 
+ 
+ cpus?  y        n      n
+ scale: low      Medium High         
+ block lib : y    y      n
+ GIL      n      y      n
 con-currency
 
 1 multi processes -- only  Cpython can do
 2 multi thread  -- GIL   make concurrency but not make it be fast
+
+lib Eventlet 
 
 
 aysnc await
@@ -38,5 +48,11 @@ asunc def hello2():
 if  __name__ == '__main__'
   loop  = asyncio.run_until_complete( hello() )
   
+  
+  
+'''
+ heavy task
+ - call await asyncio.sleep(0)
+'''
   
   
