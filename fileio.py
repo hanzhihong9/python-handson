@@ -12,6 +12,15 @@ for line in fh:
         count += (1 if character.isupper() else 0)
         
         
+def print_directory_contents(sPath):
+    import os                                       
+    for sChild in os.listdir(sPath):                
+        sChildPath = os.path.join(sPath,sChild)
+        if os.path.isdir(sChildPath):
+            print_directory_contents(sChildPath)
+        else:
+            print(sChildPath        
+        
 daily_balances = [107.92, 108.67, 109.86, 110.15]
 print 'daily_balances[-2 :0: -1]' + str(daily_balances[-2 : 0:-1]) ##[109.86,108.67]
 print 'daily_balances[-2 : 0]' + str(daily_balances[-2 : 0]) ##[] from 2 to 0, so empty
